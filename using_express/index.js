@@ -8,11 +8,12 @@
 import express from "express";
 const app = express();
 const port = 3000;
-// Using the Get Request
-app.get("/", (req, resp) => {
-  resp.send("Hello World!");
+app.get("/", (req, res) => {
+    res.send("Hello World")
+    console.log(req.rawHeaders)
 });
 
+
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Listening on localhost:${port}`);
 });
